@@ -1,0 +1,6 @@
+results/
+checkpoints/
+data/test_set/
+data/train_set/
+__pycache__/
+*.pyc
