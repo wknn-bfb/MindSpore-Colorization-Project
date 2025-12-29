@@ -1,4 +1,3 @@
-```markdown
 # MindSpore-Colorization-Project
 
 > 基于 MindSpore 的用户引导式图像上色实现  
@@ -16,10 +15,10 @@
 
 2. 一键上色
    ```bash
-   python demo.py --input data/demo_imgs/apple.jpg --output results/apple_color.jpg
+   python demo.py
    ```
-   想自己点颜色？直接运行 `python demo.py` 进入交互 GUI：
-
+   如需修改上色图，请在demo.py中修改路径
+   
    | 操作 | 效果 |
    |---|---|
    | 左键点击图片任意位置 | 弹出取色器，选择颜色后实时上色 |
@@ -27,16 +26,18 @@
    | `s` | 保存当前交互窗口（自动递增 demo1, demo2...） |
    | `q` | 退出 |
 
-3. 训练 / 评估
+3. 训练
+   训练全部基于华为云平台实现，相关代码位于src文件夹下。
+4. 评估
+   
    ```bash
-   python src/train.py --data_dir data/train_set --batch_size 32 --epochs 100
    python evaluate.py --pred_dir results/our --gt_dir data/test_set
    ```
 
 ## 📂 目录一览
 
 ```
-├── baselines/          # ECCV16 & SigGraph17 复现
+├── baselines/          # ECCV16 & SigGraph17 
 ├── checkpoints/        # 下载的 *.ckpt / *.pth（git-ignored）
 ├── data/               #  demo_imgs 可提交；train/test 自行准备
 ├── results/            # 输出目录（git-ignored）
