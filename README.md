@@ -17,7 +17,8 @@
    ```bash
    python demo.py
    ```
-   如需修改上色图，请在demo.py中修改路径
+   如需修改图片，请在demo.py中更换路径
+   按下S上色结果会自动保存到MindSpore-Colorization-Project\results\demo_showcase下
    
    | 操作 | 效果 |
    |---|---|
@@ -26,12 +27,17 @@
    | `s` | 保存当前交互窗口（自动递增 demo1, demo2...） |
    | `q` | 退出 |
 
-3. 训练
+4. 训练
    训练全部基于华为云平台实现，相关代码位于src文件夹下。
-4. 评估
-   
+5. 测试与评估
+   在data文件夹下建立test_set文件夹，里面存放测试用例。
+   然后运行run_baselines.py和run_our_model.py来批量跑基线模型以及我们的模型
+   预测结果会分别自动保存到results下的三个文件夹中：baseline1,baseline2,our
+   最后运行evaluate.py会自动读取results文件夹中结果，输出各个模型的关键指标。
    ```bash
-   python evaluate.py --pred_dir results/our --gt_dir data/test_set
+   python run_baselines.py
+   python run_our_model.py
+   python evaluate.py
    ```
 
 ## 📂 目录一览
@@ -39,7 +45,7 @@
 ```
 ├── baselines/          # ECCV16 & SigGraph17 
 ├── checkpoints/        # 下载的 *.ckpt / *.pth（git-ignored）
-├── data/               #  demo_imgs 可提交；train/test 自行准备
+├── data/               #  已有demo_imgs；train/test 自行准备
 ├── results/            # 输出目录（git-ignored）
 ├── scripts/            # 权重下载脚本
 ├── src/                # 模型、损失、数据集、训练逻辑
@@ -69,13 +75,6 @@ pip install -r requirements.txt
 
 ## 🤝 Acknowledgement
 
-- 原始 U-Net & PatchGAN 设计：Olaf Ronneberger et al.  
 - 感知损失 VGG 权重：PyTorch 官方预训练模型  
-- 基线代码参考：ECCV16 Colorization、SIGGRAPH17 Colorization  
-- 华为 MindSpore 团队提供的算子支持与图模式优化建议  
+- 基线：ECCV16 Colorization、SIGGRAPH17 Colorization
 - 数据集：COCO-2017
-
-## 📄 许可证
-
-MIT © wknn-bfb
-```
