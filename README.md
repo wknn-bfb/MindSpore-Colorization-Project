@@ -21,7 +21,7 @@
    按下S上色结果会自动保存到MindSpore-Colorization-Project\results\demo_showcase下
    
    | 操作 | 效果 |
-   |---|---|
+   |:-:|:-:|
    | 左键点击图片任意位置 | 弹出取色器，选择颜色后实时上色 |
    | `r` | 重置所有提示点 |
    | `s` | 保存当前交互窗口（自动递增 demo1, demo2...） |
@@ -70,7 +70,7 @@ pip install -r requirements.txt
 
 ## 📄 更多信息
 
-技术细节、实验数据与完整报告见仓库内 [`report.docx`](report.docx)。  
+技术细节、实验数据与完整报告见仓库内 [`report.pdf`](report.pdf)。  
 欢迎提 Issue / PR 一起改进！
 
 ## 🤝 Acknowledgement
